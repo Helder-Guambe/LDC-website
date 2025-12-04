@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt" id="htmlLang">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,6 +28,39 @@ nav a {
 .navbar-brand {
     font-weight: 600;
     font-size: 1.4rem;
+}
+
+/* Idioma dropdown */
+.idioma-dropdown {
+    margin-left: 10px;
+}
+.idioma-btn {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.3);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.idioma-btn:hover {
+    background: rgba(255,255,255,0.1);
+}
+.idioma-dropdown-menu {
+    min-width: 120px;
+}
+.idioma-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+}
+.bandeira {
+    width: 20px;
+    height: 15px;
+    object-fit: cover;
+    border-radius: 2px;
 }
 
 /* Hero */
@@ -170,6 +203,36 @@ iframe {
     border-radius: 8px;
     height: 180px;
 }
+
+/* Estilos para a seção Sobre com ícones */
+.valor-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+.valor-icon {
+    background-color: #e8f5e9;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    flex-shrink: 0;
+    color: #2e7d32;
+    font-size: 1.2rem;
+}
+.valor-text h5 {
+    color: #2e7d32;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+.sobre-logo {
+    max-height: 330px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
 </style>
 </head>
 
@@ -183,15 +246,37 @@ iframe {
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="menu">
-        <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
-            <li class="nav-item"><a class="nav-link" href="#areas">Áreas</a></li>
-            <li class="nav-item"><a class="nav-link" href="#servicos">Serviços</a></li>
-            <li class="nav-item"><a class="nav-link" href="#produtos">Produtos</a></li>
-            <li class="nav-item"><a class="nav-link" href="#parceiros">Parceiros</a></li>
-            <li class="nav-item"><a class="nav-link" href="#equipe">Equipe</a></li>
-            <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+        <ul class="navbar-nav ms-auto align-items-center">
+            <li class="nav-item"><a class="nav-link" href="#hero" data-i18n="home">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#sobre" data-i18n="sobre">Sobre</a></li>
+            <li class="nav-item"><a class="nav-link" href="#areas" data-i18n="areas">Áreas</a></li>
+            <li class="nav-item"><a class="nav-link" href="#servicos" data-i18n="servicos">Serviços</a></li>
+            <li class="nav-item"><a class="nav-link" href="#produtos" data-i18n="produtos">Produtos</a></li>
+            <li class="nav-item"><a class="nav-link" href="#parceiros" data-i18n="parceiros">Parceiros</a></li>
+            <li class="nav-item"><a class="nav-link" href="#equipe" data-i18n="equipe">Equipe</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contato" data-i18n="contato">Contato</a></li>
+            
+            <!-- Seletor de Idioma -->
+            <li class="nav-item dropdown idioma-dropdown">
+                <button class="btn idioma-btn dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                    <img src="https://flagcdn.com/w20/pt.png" class="bandeira" alt="Português">
+                    <span>PT</span>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end idioma-dropdown-menu">
+                    <li>
+                        <a class="dropdown-item idioma-option" href="#" data-lang="pt">
+                            <img src="https://flagcdn.com/w20/pt.png" class="bandeira" alt="Português">
+                            Português
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item idioma-option" href="#" data-lang="en">
+                            <img src="https://flagcdn.com/w20/gb.png" class="bandeira" alt="English">
+                            English
+                        </a>
+                    </li>
+                </ul>
+            </li>
         </ul>
     </div>
   </div>
@@ -200,65 +285,93 @@ iframe {
 <!-- Hero -->
 <section id="hero" class="hero d-flex justify-content-center align-items-center">
   <div class="container">
-    <h1 class="display-4 fw-bold">Transformando Frutas em Oportunidade</h1>
-    <p class="mt-3 mb-4 fs-5">Soluções agroindustriais sustentáveis que fortalecem agricultores, agregam valor e impulsionam o desenvolvimento rural.</p>
-    <a href="#sobre" class="btn btn-primary fw-semibold">Conheça a LDC</a>
+    <h1 class="display-4 fw-bold" data-i18n="heroTitle">Transformando Frutas em Oportunidade</h1>
+    <p class="mt-3 mb-4 fs-5" data-i18n="heroText">Soluções agroindustriais sustentáveis que fortalecem agricultores, agregam valor e impulsionam o desenvolvimento rural.</p>
+    <a href="#sobre" class="btn btn-primary fw-semibold" data-i18n="heroButton">Conheça a LDC</a>
   </div>
 </section>
 
 <!-- Sobre -->
 <section id="sobre" class="container py-5">
-  <h2 class="section-title">Sobre a LDC</h2>
+  <h2 class="section-title" data-i18n="sobreTitle">Sobre a LDC</h2>
   <div class="row align-items-center">
     <div class="col-md-6">
-      <p>LDC Business & Consultores é uma empresa moçambicana fundada em 2021, sediada em Nampula, vocacionada ao agroprocessamento sustentável. Transformamos frutas tropicais em sumos, polpas, geleias, frutas secas e biofertilizantes.</p>
-      <p>Trabalhamos com agricultores locais promovendo renda, nutrição e impacto social com foco no ambiente e inovação tecnológica.</p>
-      <ul class="mt-3">
-        <li><strong>Missão:</strong> Impulsionar a produtividade frutícola e geração de valor.</li>
-        <li><strong>Visão:</strong> Ser referência nacional em agroprocessamento e sumos tropicais.</li>
-        <li><strong>Valores:</strong> Ética, Sustentabilidade, Qualidade, Comunidade, Transparência.</li>
-      </ul>
+      <p data-i18n="sobreText1"><strong>LDC Business & Consultores</strong> é uma empresa moçambicana fundada em 2021, sediada em Nampula, vocacionada ao agroprocessamento sustentável. Transformamos frutas tropicais em sumos, polpas, geleias, frutas secas e biofertilizantes.</p>
+      <p data-i18n="sobreText2">Trabalhamos com agricultores locais promovendo renda, nutrição e impacto social com foco no ambiente e inovação tecnológica.</p>
+      
+      <div class="mt-4">
+        <div class="valor-item">
+          <div class="valor-icon">
+            <i class="fas fa-bullseye"></i>
+          </div>
+          <div class="valor-text">
+            <h5 data-i18n="missaoTitle">Missão</h5>
+            <p data-i18n="missaoText">Impulsionar a produtividade frutícola e geração de valor.</p>
+          </div>
+        </div>
+        
+        <div class="valor-item">
+          <div class="valor-icon">
+            <i class="fas fa-eye"></i>
+          </div>
+          <div class="valor-text">
+            <h5 data-i18n="visaoTitle">Visão</h5>
+            <p data-i18n="visaoText">Ser referência nacional em agroprocessamento e sumos tropicais.</p>
+          </div>
+        </div>
+        
+        <div class="valor-item">
+          <div class="valor-icon">
+            <i class="fas fa-heart"></i>
+          </div>
+          <div class="valor-text">
+            <h5 data-i18n="valoresTitle">Valores</h5>
+            <p data-i18n="valoresText">Ética, Sustentabilidade, Qualidade, Comunidade, Transparência.</p>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="col-md-6 text-center">
-      <img src="assets/img/LDC Official 2.png" class="img-fluid rounded" style="max-height:330px;">
+      <img src="assets/img/LDC Official 2.png" class="sobre-logo img-fluid" alt="LDC Business & Consultores">
+      <!-- REMOVIDO: <p class="mt-3 text-muted"><em data-i18n="sobreLegenda">Comprometidos com o desenvolvimento sustentável de Moçambique</em></p> -->
     </div>
   </div>
 </section>
 
 <!-- Áreas -->
 <section id="areas" class="container py-5">
-  <h2 class="section-title">Áreas de Atuação</h2>
+  <h2 class="section-title" data-i18n="areasTitle">Áreas de Atuação</h2>
   <div class="row text-center">
-    <div class="col-md-3"><i class="fa-solid fa-seedling fa-2x text-success"></i><p class="mt-2">Produção frutícola sustentável</p></div>
-    <div class="col-md-3"><i class="fa-solid fa-industry fa-2x text-success"></i><p class="mt-2">Agroprocessamento</p></div>
-    <div class="col-md-3"><i class="fa-solid fa-recycle fa-2x text-success"></i><p class="mt-2">Economia circular</p></div>
-    <div class="col-md-3"><i class="fa-solid fa-people-group fa-2x text-success"></i><p class="mt-2">Inclusão comunitária</p></div>
+    <div class="col-md-3"><i class="fa-solid fa-seedling fa-2x text-success"></i><p class="mt-2" data-i18n="area1">Produção frutícola sustentável</p></div>
+    <div class="col-md-3"><i class="fa-solid fa-industry fa-2x text-success"></i><p class="mt-2" data-i18n="area2">Agroprocessamento</p></div>
+    <div class="col-md-3"><i class="fa-solid fa-recycle fa-2x text-success"></i><p class="mt-2" data-i18n="area3">Economia circular</p></div>
+    <div class="col-md-3"><i class="fa-solid fa-people-group fa-2x text-success"></i><p class="mt-2" data-i18n="area4">Inclusão comunitária</p></div>
   </div>
 </section>
 
 <!-- Serviços -->
 <section id="servicos" class="container py-5">
-  <h2 class="section-title">Nossos Serviços</h2>
+  <h2 class="section-title" data-i18n="servicosTitle">Nossos Serviços</h2>
   <div class="row g-4 text-center">
     <div class="col-md-4">
       <div class="card p-3">
         <i class="fa-solid fa-lemon fa-2x text-success mb-3"></i>
-        <h5>Comercialização de Produtos</h5>
-        <p>Sumos, polpas, geleias, frutas secas e transformados agroalimentares.</p>
+        <h5 data-i18n="servico1Title">Comercialização de Produtos</h5>
+        <p data-i18n="servico1Text">Sumos, polpas, geleias, frutas secas e transformados agroalimentares.</p>
       </div>
     </div>
     <div class="col-md-4">
       <div class="card p-3">
         <i class="fa-solid fa-truck-fast fa-2x text-success mb-3"></i>
-        <h5>Logística e Cadeia de Frio</h5>
-        <p>Transporte e conservação de produtos agrícolas com qualidade.</p>
+        <h5 data-i18n="servico2Title">Logística e Cadeia de Frio</h5>
+        <p data-i18n="servico2Text">Transporte e conservação de produtos agrícolas com qualidade.</p>
       </div>
     </div>
     <div class="col-md-4">
       <div class="card p-3">
         <i class="fa-solid fa-book-open fa-2x text-success mb-3"></i>
-        <h5>Educação Nutricional</h5>
-        <p>Sensibilização para consumo saudável e fortalecimento rural.</p>
+        <h5 data-i18n="servico3Title">Educação Nutricional</h5>
+        <p data-i18n="servico3Text">Sensibilização para consumo saudável e fortalecimento rural.</p>
       </div>
     </div>
   </div>
@@ -266,39 +379,39 @@ iframe {
 
 <!-- Produtos -->
 <section id="produtos" class="container py-5">
-  <h2 class="section-title">Os Nossos Produtos</h2>
+  <h2 class="section-title" data-i18n="produtosTitle">Os Nossos Produtos</h2>
   <div class="row g-4 text-center">
     <!-- Sumos e Polpas -->
     <div class="col-md-3">
       <div class="card prod-card p-3 h-100">
-        <img src="assets/img/Frutal.png">
+        <img src="assets/img/mango-still-life.jpg">
         <h6 class="mt-2 fw-bold">Manga</h6>
-        <p>Sumos e polpas naturais 100% frescos.</p>
-        <button class="btn btn-primary">Fazer Pedido</button>
+        <p data-i18n="produto1Desc">Sumos e polpas naturais 100% frescos.</p>
+        <button class="btn btn-primary" data-i18n="fazerPedido">Fazer Pedido</button>
       </div>
     </div>
     <div class="col-md-3">
       <div class="card prod-card p-3 h-100">
         <img src="assets/img/bananas-white-background.jpg">
         <h6 class="mt-2 fw-bold">Banana</h6>
-        <p>Polpa nutritiva e rica em energia.</p>
-        <button class="btn btn-primary">Fazer Pedido</button>
+        <p data-i18n="produto2Desc">Polpa nutritiva e rica em energia.</p>
+        <button class="btn btn-primary" data-i18n="fazerPedido">Fazer Pedido</button>
       </div>
     </div>
     <div class="col-md-3">
       <div class="card prod-card p-3 h-100">
         <img src="assets/img/orange-juicy-ripe-circle-citrus.jpg">
         <h6 class="mt-2 fw-bold">Laranja</h6>
-        <p>Vitaminas naturais e refrescantes.</p>
-        <button class="btn btn-primary">Fazer Pedido</button>
+        <p data-i18n="produto3Desc">Vitaminas naturais e refrescantes.</p>
+        <button class="btn btn-primary" data-i18n="fazerPedido">Fazer Pedido</button>
       </div>
     </div>
     <div class="col-md-3">
       <div class="card prod-card p-3 h-100">
         <img src="assets/img/papaya-fruit-isolated.jpg">
         <h6 class="mt-2 fw-bold">Papaia</h6>
-        <p>Polpa fresca ideal para sumos.</p>
-        <button class="btn btn-primary">Fazer Pedido</button>
+        <p data-i18n="produto4Desc">Polpa fresca ideal para sumos.</p>
+        <button class="btn btn-primary" data-i18n="fazerPedido">Fazer Pedido</button>
       </div>
     </div>
     <!-- Novo card Frutal -->
@@ -306,33 +419,33 @@ iframe {
       <div class="card prod-card p-3 h-100">
         <img src="assets/img/Frutal.png">
         <h6 class="mt-2 fw-bold">Frutal</h6>
-        <p>Sumos tropicais frescos e naturais.</p>
-        <button class="btn btn-primary">Fazer Pedido</button>
+        <p data-i18n="produto5Desc">Sumos tropicais frescos e naturais.</p>
+        <button class="btn btn-primary" data-i18n="fazerPedido">Fazer Pedido</button>
       </div>
     </div>
     <!-- Secos -->
     <div class="col-md-3">
       <div class="card prod-card p-3 h-100">
-        <img src="assets/img/mango-still-life.jpg">
+        <img src="assets/img/mangas secas.png">
         <h6 class="mt-2 fw-bold">Manga Seca</h6>
-        <p>Conservada ao sol mantendo nutrientes.</p>
-        <button class="btn btn-primary">Fazer Pedido</button>
+        <p data-i18n="produto6Desc">Conservada ao sol mantendo nutrientes.</p>
+        <button class="btn btn-primary" data-i18n="fazerPedido">Fazer Pedido</button>
       </div>
     </div>
     <div class="col-md-3">
       <div class="card prod-card p-3 h-100">
-        <img src="assets/img/bananas-white-background.jpg">
+        <img src="assets/img/fatias de banana.png">
         <h6 class="mt-2 fw-bold">Chips de Banana</h6>
-        <p>Crocantes e deliciosas.</p>
-        <button class="btn btn-primary">Fazer Pedido</button>
+        <p data-i18n="produto7Desc">Crocantes e deliciosas.</p>
+        <button class="btn btn-primary" data-i18n="fazerPedido">Fazer Pedido</button>
       </div>
     </div>
     <div class="col-md-3">
       <div class="card prod-card p-3 h-100">
-        <img src="assets/img/mango-still-life.jpg">
+        <img src="assets/img/polpa.png">
         <h6 class="mt-2 fw-bold">Compotas e Concentrados</h6>
-        <p>Para consumo natural e saudável.</p>
-        <button class="btn btn-primary">Fazer Pedido</button>
+        <p data-i18n="produto8Desc">Para consumo natural e saudável.</p>
+        <button class="btn btn-primary" data-i18n="fazerPedido">Fazer Pedido</button>
       </div>
     </div>
   </div>
@@ -340,7 +453,7 @@ iframe {
 
 <!-- Parceiros -->
 <section id="parceiros" class="container py-5">
-  <h2 class="section-title">Parceiros</h2>
+  <h2 class="section-title" data-i18n="parceirosTitle">Parceiros</h2>
   <div class="row justify-content-center text-center g-4">
     <div class="col-md-2 col-6"><img src="assets/img/MOZ RURAL2.png" class="partner-logo" alt="Moz Rural"></div>
     <div class="col-md-2 col-6"><img src="assets/img/FNDS.png" class="partner-logo" alt="FNDS"></div>
@@ -352,34 +465,34 @@ iframe {
 
 <!-- Equipe -->
 <section id="equipe" class="container py-5">
-  <h2 class="section-title">Equipe</h2>
+  <h2 class="section-title" data-i18n="equipeTitle">Equipe</h2>
   <div class="row justify-content-center g-4 text-center">
     <div class="col-md-3">
       <img src="assets/img/Camira.jpg" class="team-img mb-2">
-      <h6>Camira Chisico</h6><p>Frontend Developer</p>
+      <h6>Camira Chissico</h6><p data-i18n="cargo1">Frontend Developer</p>
     </div>
     <div class="col-md-3">
       <img src="assets/img/helder.jpg" class="team-img mb-2">
-      <h6>Helder Guambe</h6><p>Backend Developer</p>
+      <h6>Helder Guambe</h6><p data-i18n="cargo2">Backend Developer</p>
     </div>
   </div>
 </section>
 
 <!-- Contato -->
 <section id="contato" class="container py-5">
-  <h2 class="section-title">Entre em Contato</h2>
+  <h2 class="section-title" data-i18n="contatoTitle">Entre em Contato</h2>
   <div class="row g-4">
     <div class="col-md-6">
       <form>
-        <input class="form-control" placeholder="Nome completo">
-        <input class="form-control" type="email" placeholder="Email">
-        <input class="form-control" placeholder="Assunto">
-        <textarea class="form-control" rows="5" placeholder="Mensagem"></textarea>
-        <button class="btn btn-primary mt-2">Enviar</button>
+        <input class="form-control" placeholder="Nome completo" data-i18n="nomePlaceholder">
+        <input class="form-control" type="email" placeholder="Email" data-i18n="emailPlaceholder">
+        <input class="form-control" placeholder="Assunto" data-i18n="assuntoPlaceholder">
+        <textarea class="form-control" rows="5" placeholder="Mensagem" data-i18n="mensagemPlaceholder"></textarea>
+        <button class="btn btn-primary mt-2" data-i18n="enviarButton">Enviar</button>
       </form>
     </div>
     <div class="col-md-6">
-      <h5>Contactos</h5>
+      <h5 data-i18n="contactosTitle">Contactos</h5>
       <p><i class="fa-solid fa-phone"></i> +258 840388030 / +258 878902766</p>
       <p><i class="fa-solid fa-envelope"></i> comercial@ldcbusiness.co.mz</p>
       <p><i class="fa-solid fa-location-dot"></i> Rapale, Nampula - Moçambique</p>
@@ -393,28 +506,241 @@ iframe {
   <div class="container footer-container">
         <div class="footer-left">
       <h5>LDC Business & Consultores</h5>
-      <p>Transformação, Inovação e Agroprocessamento</p>
+      <p data-i18n="footerSlogan">Transformação, Inovação e Agroprocessamento</p>
     </div>
     <div class="footer-center">
-      <h5>Redes Sociais</h5>
+      <h5 data-i18n="redesSociais">Redes Sociais</h5>
       <a href="#" target="_blank"  class="text-white me-3"><i class="fab fa-facebook fa-lg"></i></a>
       <a href="#" target="_blank"  class="text-white me-3"><i class="fab fa-instagram fa-lg"></i></a>
       <a href="#" target="_blank"  class="text-white me-3"><i class="fab fa-twitter fa-lg"></i></a>
       <a href="#" target="_blank"  class="text-white me-3"><i class="fab fa-linkedin fa-lg"></i></a>
     </div>
     <div class="footer-right">
-      <h5>Contactos</h5>
+      <h5 data-i18n="contactosTitle">Contactos</h5>
       <p><i class="fa-solid fa-phone"></i> +258 840388030 / +258 878902766</p>
       <p><i class="fa-solid fa-envelope"></i> comercial@ldcbusiness.co.mz</p>
       <p><i class="fa-solid fa-location-dot"></i> Rapale, Nampula - Moçambique</p>
     </div>
   </div>
   <div class="text-center mt-3">
-    <p>© 2025 North Digits. Todos os direitos reservados.</p>
+    <p data-i18n="copyright">© 2025 North Digits. Todos os direitos reservados.</p>
   </div>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+// Dicionários de tradução
+const translations = {
+    pt: {
+        // Navbar
+        "home": "Home",
+        "sobre": "Sobre",
+        "areas": "Áreas",
+        "servicos": "Serviços",
+        "produtos": "Produtos",
+        "parceiros": "Parceiros",
+        "equipe": "Equipe",
+        "contato": "Contato",
+        
+        // Hero
+        "heroTitle": "Transformando Frutas em Oportunidade",
+        "heroText": "Soluções agroindustriais sustentáveis que fortalecem agricultores, agregam valor e impulsionam o desenvolvimento rural.",
+        "heroButton": "Conheça a LDC",
+        
+        // Sobre
+        "sobreTitle": "Sobre a LDC",
+        "sobreText1": "<strong>LDC Business & Consultores</strong> é uma empresa moçambicana fundada em 2021, sediada em Nampula, vocacionada ao agroprocessamento sustentável. Transformamos frutas tropicais em sumos, polpas, geleias, frutas secas e biofertilizantes.",
+        "sobreText2": "Trabalhamos com agricultores locais promovendo renda, nutrição e impacto social com foco no ambiente e inovação tecnológica.",
+        "missaoTitle": "Missão",
+        "missaoText": "Impulsionar a produtividade frutícola e geração de valor.",
+        "visaoTitle": "Visão",
+        "visaoText": "Ser referência nacional em agroprocessamento e sumos tropicais.",
+        "valoresTitle": "Valores",
+        "valoresText": "Ética, Sustentabilidade, Qualidade, Comunidade, Transparência.",
+        
+        // Áreas
+        "areasTitle": "Áreas de Atuação",
+        "area1": "Produção frutícola sustentável",
+        "area2": "Agroprocessamento",
+        "area3": "Economia circular",
+        "area4": "Inclusão comunitária",
+        
+        // Serviços
+        "servicosTitle": "Nossos Serviços",
+        "servico1Title": "Comercialização de Produtos",
+        "servico1Text": "Sumos, polpas, geleias, frutas secas e transformados agroalimentares.",
+        "servico2Title": "Logística e Cadeia de Frio",
+        "servico2Text": "Transporte e conservação de produtos agrícolas com qualidade.",
+        "servico3Title": "Educação Nutricional",
+        "servico3Text": "Sensibilização para consumo saudável e fortalecimento rural.",
+        
+        // Produtos
+        "produtosTitle": "Os Nossos Produtos",
+        "fazerPedido": "Fazer Pedido",
+        "produto1Desc": "Sumos e polpas naturais 100% frescos.",
+        "produto2Desc": "Polpa nutritiva e rica em energia.",
+        "produto3Desc": "Vitaminas naturais e refrescantes.",
+        "produto4Desc": "Polpa fresca ideal para sumos.",
+        "produto5Desc": "Sumos tropicais frescos e naturais.",
+        "produto6Desc": "Conservada ao sol mantendo nutrientes.",
+        "produto7Desc": "Crocantes e deliciosas.",
+        "produto8Desc": "Para consumo natural e saudável.",
+        
+        // Parceiros
+        "parceirosTitle": "Parceiros",
+        
+        // Equipe
+        "equipeTitle": "Equipe",
+        "cargo1": "Frontend Developer",
+        "cargo2": "Backend Developer",
+        
+        // Contato
+        "contatoTitle": "Entre em Contato",
+        "nomePlaceholder": "Nome completo",
+        "emailPlaceholder": "Email",
+        "assuntoPlaceholder": "Assunto",
+        "mensagemPlaceholder": "Mensagem",
+        "enviarButton": "Enviar",
+        "contactosTitle": "Contactos",
+        
+        // Footer
+        "footerSlogan": "Transformação, Inovação e Agroprocessamento",
+        "redesSociais": "Redes Sociais",
+        "copyright": "© 2025 North Digits. Todos os direitos reservados."
+    },
+    en: {
+        // Navbar
+        "home": "Home",
+        "sobre": "About",
+        "areas": "Areas",
+        "servicos": "Services",
+        "produtos": "Products",
+        "parceiros": "Partners",
+        "equipe": "Team",
+        "contato": "Contact",
+        
+        // Hero
+        "heroTitle": "Transforming Fruits into Opportunity",
+        "heroText": "Sustainable agro-industrial solutions that empower farmers, add value and drive rural development.",
+        "heroButton": "Discover LDC",
+        
+        // Sobre
+        "sobreTitle": "About LDC",
+        "sobreText1": "<strong>LDC Business & Consultores</strong> is a Mozambican company founded in 2021, based in Nampula, focused on sustainable agro-processing. We transform tropical fruits into juices, pulps, jams, dried fruits and biofertilizers.",
+        "sobreText2": "We work with local farmers promoting income, nutrition and social impact with a focus on the environment and technological innovation.",
+        "missaoTitle": "Mission",
+        "missaoText": "Boost fruit productivity and value generation.",
+        "visaoTitle": "Vision",
+        "visaoText": "To be the national reference in agro-processing and tropical juices.",
+        "valoresTitle": "Values",
+        "valoresText": "Ethics, Sustainability, Quality, Community, Transparency.",
+        
+        // Áreas
+        "areasTitle": "Areas of Operation",
+        "area1": "Sustainable fruit production",
+        "area2": "Agro-processing",
+        "area3": "Circular economy",
+        "area4": "Community inclusion",
+        
+        // Serviços
+        "servicosTitle": "Our Services",
+        "servico1Title": "Product Marketing",
+        "servico1Text": "Juices, pulps, jams, dried fruits and agro-food products.",
+        "servico2Title": "Logistics and Cold Chain",
+        "servico2Text": "Transport and conservation of agricultural products with quality.",
+        "servico3Title": "Nutritional Education",
+        "servico3Text": "Awareness for healthy consumption and rural strengthening.",
+        
+        // Produtos
+        "produtosTitle": "Our Products",
+        "fazerPedido": "Place Order",
+        "produto1Desc": "100% fresh natural juices and pulps.",
+        "produto2Desc": "Nutritious and energy-rich pulp.",
+        "produto3Desc": "Natural and refreshing vitamins.",
+        "produto4Desc": "Fresh pulp ideal for juices.",
+        "produto5Desc": "Fresh and natural tropical juices.",
+        "produto6Desc": "Sun-dried while preserving nutrients.",
+        "produto7Desc": "Crispy and delicious.",
+        "produto8Desc": "For natural and healthy consumption.",
+        
+        // Parceiros
+        "parceirosTitle": "Partners",
+        
+        // Equipe
+        "equipeTitle": "Team",
+        "cargo1": "Frontend Developer",
+        "cargo2": "Backend Developer",
+        
+        // Contato
+        "contatoTitle": "Contact Us",
+        "nomePlaceholder": "Full name",
+        "emailPlaceholder": "Email",
+        "assuntoPlaceholder": "Subject",
+        "mensagemPlaceholder": "Message",
+        "enviarButton": "Send",
+        "contactosTitle": "Contacts",
+        
+        // Footer
+        "footerSlogan": "Transformation, Innovation and Agro-processing",
+        "redesSociais": "Social Networks",
+        "copyright": "© 2025 North Digits. All rights reserved."
+    }
+};
+
+// Função para mudar idioma
+function changeLanguage(lang) {
+    // Muda o atributo lang do HTML
+    document.getElementById('htmlLang').lang = lang;
+    
+    // Atualiza todas as tags com data-i18n
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+            if (element.hasAttribute('placeholder')) {
+                element.placeholder = translations[lang][key];
+            } else if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                // Para campos de formulário, apenas atualiza placeholder se existir
+                // (já tratado acima)
+            } else {
+                element.innerHTML = translations[lang][key];
+            }
+        }
+    });
+    
+    // Atualiza o botão do idioma
+    const idiomaBtn = document.querySelector('.idioma-btn');
+    const idiomaSpan = idiomaBtn.querySelector('span');
+    const bandeiraImg = idiomaBtn.querySelector('img');
+    
+    if (lang === 'pt') {
+        idiomaSpan.textContent = 'PT';
+        bandeiraImg.src = 'https://flagcdn.com/w20/pt.png';
+        bandeiraImg.alt = 'Português';
+    } else if (lang === 'en') {
+        idiomaSpan.textContent = 'EN';
+        bandeiraImg.src = 'https://flagcdn.com/w20/gb.png';
+        bandeiraImg.alt = 'English';
+    }
+    
+    // Salva a preferência no localStorage
+    localStorage.setItem('preferredLanguage', lang);
+}
+
+// Event listeners para os botões de idioma
+document.addEventListener('DOMContentLoaded', function() {
+    // Verifica se há um idioma salvo
+    const savedLang = localStorage.getItem('preferredLanguage') || 'pt';
+    changeLanguage(savedLang);
+    
+    // Adiciona eventos aos botões de idioma
+    document.querySelectorAll('.idioma-option').forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            const lang = this.getAttribute('data-lang');
+            changeLanguage(lang);
+        });
+    });
+});
+</script>
 </body>
 </html>
-

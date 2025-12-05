@@ -1,0 +1,464 @@
+:root {
+  --green-700:#2e7d32;
+  --green-600:#43a047;
+  --green-800:#145923;
+  --muted:#6b7280;
+  --card-radius:12px;
+  --gray-light:#f9fafb;
+  --gray-soft:#f3f4f6;
+}
+
+/* Base */
+body {
+  font-family:'Poppins',sans-serif;
+  scroll-behavior:smooth;
+  color:#222;
+  background:#fff;
+}
+a {
+  transition:all .15s ease;
+  text-decoration:none;
+}
+
+/* Navbar */
+.navbar {
+  background:var(--green-700);
+}
+.navbar .nav-link {
+  color:#fff!important;
+  font-weight:500;
+  margin-right:10px;
+  position:relative;
+}
+.navbar .nav-link.active::after {
+  content:"";
+  position:absolute;
+  left:10%;
+  right:10%;
+  bottom:-8px;
+  height:3px;
+  background:linear-gradient(90deg,var(--green-600),#2aa24a);
+  border-radius:6px;
+  transform:scaleX(1);
+  transition:transform .25s ease;
+}
+.navbar .nav-link::after {
+  content:"";
+  position:absolute;
+  left:50%;
+  right:50%;
+  bottom:-8px;
+  height:3px;
+  background:transparent;
+  border-radius:6px;
+  transform:scaleX(0);
+  transition:all .25s ease;
+}
+
+/* Hero */
+.hero {
+  background: linear-gradient(rgba(46,125,50,0.6), rgba(46,125,50,0.6)), 
+              url('../img/Wallpaper 3.jpg') center/cover no-repeat;
+  height: 78vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+/* Título principal */
+.hero h1 {
+  font-size: 3rem;       /* maior destaque */
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+/* Subtítulo */
+.hero h2 {
+  font-size: 1.6rem;     /* menor que h1 */
+  font-weight: 500;
+  margin-bottom: 1rem;
+  color: rgba(255,255,255,0.9); /* subtítulo mais suave */
+}
+
+/* Parágrafo */
+.hero p {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.92);
+  margin-top: 0.6rem;
+  max-width: 700px;      /* largura controlada para melhor leitura */
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+/* Botão */
+.btn-primary {
+  background: var(--green-700);
+  border: none;
+  padding: 10px 24px;
+  font-weight: 600;
+}
+.btn-primary:hover {
+  background: var(--green-600);
+}
+
+/* Sections */
+.container { max-width:1140px; }
+.section-title {
+  margin:36px 0 20px;
+  text-align:center;
+  font-weight:700;
+  color:#2c3e50;
+  font-size:1.5rem;
+}
+.section {
+  padding-top:36px;
+  padding-bottom:36px;
+}
+
+/* Sobre */
+#sobre.section.container {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+#sobre .row.g-4 {
+  --bs-gutter-x: 1rem;
+  --bs-gutter-y: 1rem;
+}
+#sobre .sobre-logo {
+  max-height: 250px;
+  width: auto;
+}
+#sobre p {
+  text-align: justify;
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+}
+
+/* Cards base */
+.card {
+  border-radius:var(--card-radius);
+  box-shadow:0 6px 18px rgba(6,30,15,0.06);
+  border:1px solid rgba(0,0,0,0.03);
+  transition:transform .28s ease,box-shadow .28s ease;
+  overflow:hidden;
+}
+.card:hover {
+  transform:translateY(-6px);
+  box-shadow:0 12px 30px rgba(6,30,15,0.08);
+}
+.card .card-body {
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+
+/* Mission/Values/Visao cards */
+.mv-card .icon-wrap {
+  width:64px;
+  height:64px;
+  border-radius:50%;
+  background:var(--gray-soft);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--green-700);
+  font-size:1.6rem;
+  margin:0 auto 16px;
+}
+.mv-card h5, 
+.mv-card p {
+  text-align:center;
+}
+
+/* Produtos */
+.prod-grid .card {
+  height:100%;
+  display:flex;
+  flex-direction:column;
+}
+.prod-card img {
+  height:170px;
+  object-fit:cover;
+  border-radius:8px;
+}
+
+/* Oportunidade */
+#oportunidade {
+  background: var(--gray-light);
+  padding: 3rem 1rem;
+  border-radius: 12px;
+}
+#oportunidade h2 {
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: #2c3e50;
+}
+#oportunidade h5 {
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--green-600);
+}
+#oportunidade ul {
+  list-style: none;
+  padding-left: 0;
+}
+#oportunidade ul li {
+  margin-bottom: 0.75rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+#oportunidade ul li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: var(--green-600);
+  font-weight: bold;
+}
+
+/* Modelo */
+#modelo {
+  padding: 3rem 1rem;
+}
+#modelo h2 {
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: #2c3e50;
+}
+#modelo .card {
+  background: var(--gray-light);
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+#modelo .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+#modelo h6 {
+  font-size: 1.1rem;
+  color: var(--green-600);
+  margin-bottom: 0.75rem;
+}
+#modelo .small-muted {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+#modelo .card-body {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#modelo .card-body ul {
+  text-align: left;
+  margin: 0 auto;
+  display: inline-block;
+}
+
+/* Parceiros */
+.partner-row {
+  display:flex;
+  flex-wrap:wrap;
+  gap:18px;
+  justify-content:center;
+  align-items:center;
+}
+.partner-logo {
+  width:150px;
+  height:150px;
+  background:#fff;
+  padding:12px;
+  border-radius:10px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 6px 18px rgba(0,0,0,0.06);
+  transition:transform .25s;
+}
+.partner-logo img {
+  max-width:100%;
+  max-height:100%;
+  object-fit:contain;
+}
+.partner-logo:hover {
+  transform:translateY(-6px);
+}
+
+/* Equipe */
+.team-img {
+  width:150px;
+  height:150px;
+  object-fit:cover;
+  border-radius:50%;
+  border:4px solid var(--green-700);
+}
+
+/* Contato form */
+.form-control {
+  border-radius:10px;
+  padding:12px;
+}
+#message { resize:none; max-height:150px }
+#contact-feedback { display:none }
+
+/* Footer */
+footer {
+  background: var(--green-800);
+  color: #fff;
+  padding: 24px 0 16px;   /* compacto e equilibrado */
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: flex-start;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255,255,255,0.15); /* linha divisória suave */
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+}
+
+
+.footer-left,
+.footer-center,
+.footer-right {
+  min-width: 220px;
+  flex: 1;
+}
+
+.footer-left h5,
+.footer-slogan,
+.footer-center h6,
+.footer-right h6,
+.footer-right p,
+.footer-center a,
+footer small {
+  color: #fff;            /* todas letras brancas */
+  margin: 4px 0;          /* reduz espaço entre linhas */
+}
+
+
+.footer-left h5 {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.footer-slogan {
+  font-size: 0.9rem;
+  font-weight: 400;
+  opacity: 0.9;           /* discreto mas legível */
+}
+
+.footer-center h6,
+.footer-right h6 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.footer-center a {
+  color: #fff;
+  margin: 0 6px;
+  font-size: 1.2rem;
+  transition: color 0.2s ease;
+}
+.footer-center a:hover {
+  color: var(--green-600); /* destaque no hover */
+}
+
+.footer-right p {
+  font-size: 0.85rem;
+  margin-bottom: 4px;
+  color: #fff !important; /* força branco */
+  display: flex;
+  align-items: center;
+}
+
+
+
+footer .small-muted {
+  color: #fff !important;
+  opacity: 0.9; /* opcional: ligeiro tom mais suave */
+}
+
+footer small {
+  font-size: 0.75rem;
+  color: #fff;
+  opacity: 0.85;
+  display: block;
+  text-align: center;
+}
+
+
+.footer-map {
+  border-radius: 8px;
+  overflow: hidden;
+  border: 2px solid rgba(255,255,255,0.06);
+}
+
+
+
+/* Small tweaks */
+h5 { font-weight:700; color:#16321b }
+p.small-muted { color:var(--muted); margin:0 }
+.lead-compact { margin-bottom:0; color:#35424a }
+
+/* Animations */
+.animate {
+  opacity:0;
+  transform:translateY(10px);
+  transition:opacity .6s ease,transform .6s ease;
+}
+.animate.show {
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* Responsive */
+@media(max-width:767px){
+  .hero {
+    height:60vh;
+    padding:3rem 1rem;
+  }
+  .partner-logo {
+    width:130px;
+    height:110px;
+  }
+  .team-img {
+    width:120px;
+    height:120px;
+  }
+  .prod-card img {
+    height:150px;
+  }
+  footer {
+    padding:16px 0;
+  }
+  .section-title {
+    font-size:1.3rem;
+  }
+  .hero h1 {
+    font-size:2rem;
+  }
+  .hero p {
+    font-size:0.95rem;
+  }
+  #oportunidade, #modelo {
+    padding:2rem 1rem;
+  }
+  #modelo .card-body ul {
+    text-align:center; /* em mobile pode alinhar ao centro para simplificar */
+  }
+}

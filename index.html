@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="pt" id="htmlLang">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>LDC Business & Consultores — Transformação, Inovação e Agroprocessamento</title>
+<link rel="icon" type="image/png" href="assets/img/leaf.png">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<style>
+body {
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+    color: #333;
+}
+
+/* Navbar */
+nav {
+    background-color: #127215;
+}
+nav a {
+    color: #fff !important;
+    margin-right: 15px;
+    font-weight: 500;
+}
+.navbar-brand {
+    font-weight: 600;
+    font-size: 1.4rem;
+}
+
+/* Idioma dropdown */
+.idioma-dropdown {
+    margin-left: 10px;
+}
+.idioma-btn {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.3);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.idioma-btn:hover {
+    background: rgba(255,255,255,0.1);
+}
+.idioma-dropdown-menu {
+    min-width: 120px;
+}
+.idioma-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+}
+.bandeira {
+    width: 20px;
+    height: 15px;
+    object-fit: cover;
+    border-radius: 2px;
+}
+
+/* Hero */
+.hero {
+    background: linear-gradient(rgba(46,125,50,0.6), rgba(46,125,50,0.6)), url('assets/img/Wallpaper 4.jpg') center/cover no-repeat;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+.hero h1 {
+    font-size: 3rem;
+    font-weight: 600;
+}
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+.btn-primary {
+    background-color: #FF9100;
+    border: none;
+    font-weight: 500;
+    padding: 10px 25px;
+    transition: 0.3s;
+}
+.btn-primary:hover {
+    background-color: #25672b;
+}
+
+/* Section Titles */
+.section-title {
+    margin: 60px 0 35px;
+    text-align: center;
+    font-weight: 600;
+    color: #2e7d32;
+}
+
+/* Sobre */
+#sobre p {
+    text-align: justify;
+    line-height: 1.6;
+}
+
+/* Cards */
+.card {
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.card:hover {
+    transform: translateY(-5px);
+    border: 1px solid #2e7d32;
+}
+
+/* Produtos */
+.prod-card {
+    height: 100%;
+}
+.prod-card img {
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Equipe */
+.team-img {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 50%;
+    background-color: #FF9100;
+    border: 4px solid ;
+}
+
+/* Parceiros */
+.partner-logo {
+    height: 140px;
+    object-fit: contain;
+    background: #fff;
+    border-radius: 10px;
+    padding: 10px;
+    transition: 0.3s;
+    box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
+}
+.partner-logo:hover {
+    transform: scale(1.08);
+    box-shadow: 0px 4px 14px rgba(0,0,0,0.18);
+}
+
+/* Contato */
+#contato form .form-control {
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+#contato form button {
+    width: 100%;
+    background-color: #FF9100;
+    border: none;
+}
+#contato form button:hover {
+    background-color: #25672b;
+}
+
+/* Footer */
+footer {
+    background-color: #127215;
+    color: #fff;
+    padding: 40px 0 20px;
+}
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.footer-left, .footer-center, .footer-right {
+    flex: 1;
+    min-width: 250px;
+    margin-bottom: 20px;
+}
+.footer-left h5, .footer-center h5, .footer-right h5 {
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+.footer a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 10px;
+}
+.footer a:hover i {
+    color: #d4d4d4;
+}
+iframe {
+    border: none;
+    width: 100%;
+    border-radius: 8px;
+    height: 180px;
+}
+
+/* Estilos para a seção Sobre com ícones */
+.valor-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+.valor-icon {
+    background-color: #e8f5e9;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    flex-shrink: 0;
+    color: #2e7d32;
+    font-size: 1.2rem;
+}
+.valor-text h5 {
+    color: #2e7d32;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+.sobre-logo {
+   .sobre-logo {
+    max-height: 380px;  /* Increased from 330px */
+    max-width: 90%;     /* Makes it wider */
+    width: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+}
+</style>
+</head>
+
+<body>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm">
+  <div class="container">
+    <!-- Logo -->
+    <a class="navbar-brand" href="#hero">
+      <img src="assets/img/logo-ldc.png" alt="LDC Logo" class="logo-navbar">
+    </a>
+
+    <!-- Toggler -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Menu -->
+    <div class="collapse navbar-collapse" id="menu">
+      <ul class="navbar-nav ms-auto align-items-center" id="mainNav">
+        <li class="nav-item"><a class="nav-link" href="#hero" data-i18n="home">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#sobre" data-i18n="sobre">Sobre</a></li>
+        <li class="nav-item"><a class="nav-link" href="#missao">Missão</a></li>
+        <li class="nav-item"><a class="nav-link" href="#areas" data-i18n="areas">Áreas</a></li>
+        <li class="nav-item"><a class="nav-link" href="#produtos" data-i18n="produtos">Produtos</a></li>
+        <li class="nav-item"><a class="nav-link" href="#servicos" data-i18n="servicos">Serviços</a></li>
+        <li class="nav-item"><a class="nav-link" href="#impacto">Impacto</a></li>
+        <li class="nav-item"><a class="nav-link" href="#oportunidade">Oportunidade</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contato" data-i18n="contato">Contato</a></li>
+
+        <!-- Idioma -->
+        <li class="nav-item dropdown ms-3">
+          <button class="btn idioma-btn dropdown-toggle" type="button" data-bs-toggle="dropdown">
+            <img src="https://flagcdn.com/w20/pt.png" class="bandeira" alt="PT">
+            <span class="ms-1">PT</span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item" href="#" data-lang="pt"><img src="https://flagcdn.com/w20/pt.png" class="bandeira me-2">Português</a></li>
+            <li><a class="dropdown-item" href="#" data-lang="en"><img src="https://flagcdn.com/w20/gb.png" class="bandeira me-2">English</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero" class="hero">
+  <div class="container animate">
+    <!-- Título principal -->
+    <h1 class="hero-title">LDC Business</h1>
+    
+    <!-- Subtítulo -->
+    <h2 class="hero-subtitle" data-i18n="heroTitle">Transformando Frutas em Oportunidade</h2>
+    
+    <!-- Parágrafo -->
+    <p class="lead-compact" data-i18n="heroText">
+      Soluções agroindustriais sustentáveis que fortalecem agricultores, agregam valor e impulsionam o desenvolvimento rural.
+    </p>
+    
+    <!-- Botão -->
+    <div class="mt-3">
+      <a class="btn btn-primary" href="#sobre" data-i18n="heroButton">Conheça a LDC</a>
+    </div>
+  </div>
+</section>
+
+<!-- Quem Somos -->
+<section id="sobre" class="section container py-3">
+  <h2 class="section-title mb-3" data-i18n="sobreTitle">Sobre a LDC</h2>
+  <div class="row g-2 align-items-center">
+    <div class="col-lg-6 animate">
+      <p class="mb-2" data-i18n="sobreText1"><strong>LDC Business & Consultores</strong> é uma empresa moçambicana fundada em 2021, sediada em Nampula, vocacionada ao agroprocessamento sustentável. Transformamos frutas tropicais em sumos, polpas, geleias, frutas secas e biofertilizantes.</p>
+      <p class="mb-2" data-i18n="sobreText2">Trabalhamos com agricultores locais promovendo renda, nutrição e impacto social com foco no ambiente e inovação tecnológica.</p>
+    </div>
+    <div class="col-lg-6 text-center animate">
+      <img src="assets/img/LDC PNG 4.png" class="sobre-logo img-fluid" alt="LDC">
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Missão / Visão / Valores (cards) -->
+<section id="missao" class="section container">
+  <div class="row g-3">
+    <div class="col-md-4 animate">
+      <div class="card p-3 mv-card h-100">
+        <div class="card-body">
+          <div class="icon-wrap"><i class="fas fa-bullseye"></i></div>
+          <h5>Missão</h5>
+          <p>Impulsionar a produtividade da fruticultura, promover o processamento alimentar e criar oportunidades econômicas inclusivas na cadeia de valor da fruta.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 animate">
+      <div class="card p-3 mv-card h-100">
+        <div class="card-body">
+          <div class="icon-wrap"><i class="fas fa-eye"></i></div>
+          <h5>Visão</h5>
+          <p>Tornar-nos referencia em Moçambique como produtor de sumos tropicais 100% naturais e em práticas de agroprocessamento sustentável em África.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 animate">
+      <div class="card p-3 mv-card h-100">
+        <div class="card-body">
+          <div class="icon-wrap"><i class="fas fa-heart"></i></div>
+          <h5>Valores</h5>
+          <p>Ética, Transparência, Desenvolvimento Sustentável, Qualidade e Segurança Alimentar, Empoderamento de Gênero e Juventude.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Áreas -->
+<section id="areas" class="section container">
+  <h2 class="section-title" data-i18n="areasTitle">Áreas de Atuação</h2>
+  <div class="row text-center g-3">
+    <div class="col-md-3 animate"><i class="fa-solid fa-seedling fa-2x text-success"></i><p class="mt-2">Produção frutícola sustentável</p></div>
+    <div class="col-md-3 animate"><i class="fa-solid fa-industry fa-2x text-success"></i><p class="mt-2">Agroprocessamento</p></div>
+    <div class="col-md-3 animate"><i class="fa-solid fa-recycle fa-2x text-success"></i><p class="mt-2">Economia circular</p></div>
+    <div class="col-md-3 animate"><i class="fa-solid fa-people-group fa-2x text-success"></i><p class="mt-2">Inclusão comunitária</p></div>
+  </div>
+</section>
+
+<!-- Produtos -->
+<section id="produtos" class="section container">
+  <h2 class="section-title" data-i18n="produtosTitle">Os Nossos Produtos</h2>
+
+  <div class="row g-3 prod-grid">
+    <!-- each card equal height -->
+    <div class="col-sm-6 col-md-3 animate">
+      <div class="card prod-card p-3 h-100 text-center">
+        <img src="assets/img/mango-still-life.jpg" class="img-fluid mb-2" alt="Manga">
+        <div class="card-body">
+          <div>
+            <h6 class="fw-bold">Manga</h6>
+            <p class="small-muted">Sumos e polpas naturais 100% frescos.</p>
+          </div>
+          <div class="mt-3"><button class="btn btn-primary w-100">Fazer Pedido</button></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-6 col-md-3 animate">
+      <div class="card prod-card p-3 h-100 text-center">
+        <img src="assets/img/bananas-white-background.jpg" class="img-fluid mb-2" alt="Banana">
+        <div class="card-body">
+          <div>
+            <h6 class="fw-bold">Banana</h6>
+            <p class="small-muted">Polpa nutritiva e rica em energia.</p>
+          </div>
+          <div class="mt-3"><button class="btn btn-primary w-100">Fazer Pedido</button></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-6 col-md-3 animate">
+      <div class="card prod-card p-3 h-100 text-center">
+        <img src="assets/img/orange-juicy-ripe-circle-citrus.jpg" class="img-fluid mb-2" alt="Laranja">
+        <div class="card-body">
+          <div>
+            <h6 class="fw-bold">Laranja</h6>
+            <p class="small-muted">Vitaminas naturais e refrescantes.</p>
+          </div>
+          <div class="mt-3"><button class="btn btn-primary w-100">Fazer Pedido</button></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-6 col-md-3 animate">
+      <div class="card prod-card p-3 h-100 text-center">
+        <img src="assets/img/papaya-fruit-isolated.jpg" class="img-fluid mb-2" alt="Papaia">
+        <div class="card-body">
+          <div>
+            <h6 class="fw-bold">Papaia</h6>
+            <p class="small-muted">Polpa fresca ideal para sumos.</p>
+          </div>
+          <div class="mt-3"><button class="btn btn-primary w-100">Fazer Pedido</button></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Frutal novo card -->
+    <div class="col-sm-6 col-md-3 animate">
+      <div class="card prod-card p-3 h-100 text-center">
+        <img src="assets/img/Frutal.png" class="img-fluid mb-2" alt="Frutal">
+        <div class="card-body">
+          <div>
+            <h6 class="fw-bold">Frutal</h6>
+            <p class="small-muted">Sumos tropicais frescos e naturais.</p>
+          </div>
+          <div class="mt-3"><button class="btn btn-primary w-100">Fazer Pedido</button></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-6 col-md-3 animate">
+      <div class="card prod-card p-3 h-100 text-center">
+        <img src="assets/img/mangas secas.png" class="img-fluid mb-2" alt="Manga Seca">
+        <div class="card-body">
+          <div>
+            <h6 class="fw-bold">Manga Seca</h6>
+            <p class="small-muted">Conservada ao sol mantendo nutrientes.</p>
+          </div>
+          <div class="mt-3"><button class="btn btn-primary w-100">Fazer Pedido</button></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-6 col-md-3 animate">
+      <div class="card prod-card p-3 h-100 text-center">
+        <img src="assets/img/fatias de banana.png" class="img-fluid mb-2" alt="Chips">
+        <div class="card-body">
+          <div>
+            <h6 class="fw-bold">Chips de Banana</h6>
+            <p class="small-muted">Crocantes e deliciosas.</p>
+          </div>
+          <div class="mt-3"><button class="btn btn-primary w-100">Fazer Pedido</button></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-6 col-md-3 animate">
+      <div class="card prod-card p-3 h-100 text-center">
+        <img src="assets/img/polpa.png" class="img-fluid mb-2" alt="Compotas">
+        <div class="card-body">
+          <div>
+            <h6 class="fw-bold">Compotas & Concentrados</h6>
+            <p class="small-muted">Para consumo natural e saudável.</p>
+          </div>
+          <div class="mt-3"><button class="btn btn-primary w-100">Fazer Pedido</button></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Serviços -->
+<section id="servicos" class="section container">
+  <h2 class="section-title" data-i18n="servicosTitle">Nossos Serviços</h2>
+  <div class="row g-3 text-center">
+    <div class="col-md-4 animate">
+      <div class="card p-3 h-100">
+        <div class="card-body">
+          <i class="fa-solid fa-lemon fa-2x text-success mb-2"></i>
+          <h5>Comercialização de Produtos</h5>
+          <p>Sumos, polpas, geleias e produtos com valor acrescentado.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 animate">
+      <div class="card p-3 h-100">
+        <div class="card-body">
+          <i class="fa-solid fa-truck-fast fa-2x text-success mb-2"></i>
+          <h5>Logística & Cadeia de Frio</h5>
+          <p>Transporte e conservação sustentáveis.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 animate">
+      <div class="card p-3 h-100">
+        <div class="card-body">
+          <i class="fa-solid fa-book-open fa-2x text-success mb-2"></i>
+          <h5>Educação Nutricional</h5>
+          <p>Programas de sensibilização e capacitação.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Nosso Impacto (cards) -->
+<section id="impacto" class="section container">
+  <h2 class="section-title">Nosso Impacto</h2>
+  <div class="row g-3">
+    <div class="col-md-3 animate">
+      <div class="card p-3 h-100 text-center">
+        <div class="card-body">
+          <div class="mb-2"><i class="fa-solid fa-chalkboard-teacher fa-2x text-success"></i></div>
+          <h6 class="fw-bold">Treinamento & Capacitação</h6>
+          <p class="small-muted">Formação de pequenos agricultores em manejo e conservação de fruta.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 animate">
+      <div class="card p-3 h-100 text-center">
+        <div class="card-body">
+          <div class="mb-2"><i class="fa-solid fa-people-group fa-2x text-success"></i></div>
+          <h6 class="fw-bold">300+ Agricultores</h6>
+          <p class="small-muted">Fornecedores integrados na cadeia de abastecimento.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 animate">
+      <div class="card p-3 h-100 text-center">
+        <div class="card-body">
+          <div class="mb-2"><i class="fa-solid fa-female fa-2x text-success"></i></div>
+          <h6 class="fw-bold">+80% Trabalhadores Locais</h6>
+          <p class="small-muted">Mulheres, jovens e pessoas vulneráveis da região.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 animate">
+      <div class="card p-3 h-100 text-center">
+        <div class="card-body">
+          <div class="mb-2"><i class="fa-solid fa-hands-holding-heart fa-2x text-success"></i></div>
+          <h6 class="fw-bold">Responsabilidade Social</h6>
+          <p class="small-muted">Programas de sensibilização nutricional baseados na fruta.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Vantagem Competitiva -->
+<section id="vantagem" class="section container">
+  <h2 class="section-title">Vantagem Competitiva</h2>
+  <div class="row g-3">
+    <div class="col-md-3 animate">
+      <div class="card p-3 h-100 text-center">
+        <div class="card-body">
+          <i class="fa-solid fa-leaf fa-2x text-success mb-2"></i>
+          <h6 class="fw-bold">100% Natural</h6>
+          <p class="small-muted">Embalagens biodegradáveis e processos ecológicos.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 animate">
+      <div class="card p-3 h-100 text-center">
+        <div class="card-body">
+          <i class="fa-solid fa-handshake fa-2x text-success mb-2"></i>
+          <h6 class="fw-bold">Abastecimento Direto</h6>
+          <p class="small-muted">Compra a preços justos diretamente a pequenos agricultores.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 animate">
+      <div class="card p-3 h-100 text-center">
+        <div class="card-body">
+          <i class="fa-solid fa-certificate fa-2x text-success mb-2"></i>
+          <h6 class="fw-bold">Qualidade Certificada</h6>
+          <p class="small-muted">ISO / HACCP e certificação biológica em progresso.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 animate">
+      <div class="card p-3 h-100 text-center">
+        <div class="card-body">
+          <i class="fa-solid fa-people-roof fa-2x text-success mb-2"></i>
+          <h6 class="fw-bold">Foco Social</h6>
+          <p class="small-muted">Emprego prioritário para mulheres e jovens locais.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Oportunidade de Mercado (texto left, imagem right) -->
+<section id="oportunidade" class="section container">
+  <h2 class="section-title">Oportunidade de Mercado</h2>
+  <div class="row g-3 align-items-center">
+    <div class="col-lg-6 animate">
+      <h5>Porquê investir em Nampula?</h5>
+      <ul>
+        <li>Matérias-primas abundantes: mangas, bananas, citrinos, papaia, etc.</li>
+        <li>Rede sólida de pequenos agricultores: +300 fornecedores locais.</li>
+        <li>Logística estratégica: proximidade do Corredor de Nacala e Porto para exportações.</li>
+        <li>Procura em crescimento: mercado regional e Médio Oriente.</li>
+      </ul>
+    </div>
+    <div class="col-lg-6 animate text-center">
+      <!-- Substitui com imagem de mapa ou gráfico conforme desejado -->
+      <img src="assets/img/Mapa de Moz.png" alt="Mapa Nampula" class="img-fluid rounded" style="max-height:320px;object-fit:cover">
+    </div>
+  </div>
+</section>
+
+<!-- Modelo de Negócio + Impacto Social e Sustentabilidade -->
+<section id="modelo" class="section container">
+  <h2 class="section-title">Modelo de Negócio & Impacto Social</h2>
+  <div class="row g-3">
+    <div class="col-md-6 animate">
+      <div class="card p-3 h-100">
+        <div class="card-body">
+          <h6 class="fw-bold">Modelo de Negócio</h6>
+          <p class="small-muted">Crescimento inclusivo com transferência de competências e empoderamento industrial rural.</p>
+          <strong>Fontes de receita:</strong>
+          <ul class="mb-0">
+            <li>Vendas B2B (hotéis, ONG, exportação)</li>
+            <li>Retalho B2C (supermercados e mercados locais)</li>
+            <li>Agricultura contratada (insumos e assistência)</li>
+            <li>Serviços logísticos (transporte e armazenamento)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 animate">
+      <div class="card p-3 h-100">
+        <div class="card-body">
+          <h6 class="fw-bold">Impacto Social & Sustentabilidade</h6>
+          <p class="small-muted mb-2">Principais conquistas e práticas sustentáveis.</p>
+          <ul>
+            <li>300+ agricultores integrados na cadeia</li>
+            <li>70% da força de trabalho são mulheres e jovens</li>
+            <li>Redução de perdas durante pós-colheita</li>
+            <li>Modelo sem desperdício: embalagens biodegradáveis e secagem solar</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Parceiros -->
+<section id="parceiros" class="section container">
+  <h2 class="section-title" data-i18n="parceirosTitle">Parceiros</h2>
+  <div class="partner-row">
+    <div class="partner-logo"><img src="assets/img/FNDS.png" alt="MozRural"></div>
+    <div class="partner-logo"><img src="assets/img/MOZ RURAL2.png" alt="FNDS"></div>
+    <div class="partner-logo"><img src="assets/img/tHE WORD BANK.png" alt="Fruti Silv"></div>
+    <div class="partner-logo"><img src="assets/img/TEC BSS.png" alt="Tec BSS"></div>
+    <div class="partner-logo"><img src="assets/img/FRUTI SILV.png" alt="World Bank"></div>
+  </div>
+</section>
+
+<!-- Equipe -->
+<section id="equipe" class="section container">
+  <h2 class="section-title" data-i18n="equipeTitle">Equipe</h2>
+  <div class="row justify-content-center g-4 text-center">
+    <div class="col-md-3 animate">
+      <img src="assets/img/Camira.jpg" class="team-img mb-2" alt="Camira">
+      <h6>Camira Chissico</h6>
+      <p class="small-muted">Frontend Developer</p>
+    </div>
+    <div class="col-md-3 animate">
+      <img src="assets/img/helder.jpg" class="team-img mb-2" alt="Helder">
+      <h6>Helder Guambe</h6>
+      <p class="small-muted">Backend Developer</p>
+    </div>
+  </div>
+</section>
+
+<!-- Contato -->
+<section id="contato" class="section container">
+  <h2 class="section-title" data-i18n="contatoTitle">Entre em Contato</h2>
+  <div class="row g-3">
+    <div class="col-lg-6 animate">
+      <form id="contact-form">
+        <input class="form-control mb-2" id="name" name="name" placeholder="Nome completo" required>
+        <input class="form-control mb-2" id="email" name="email" type="email" placeholder="Email" required>
+        <input class="form-control mb-2" id="subject" name="subject" placeholder="Assunto" required>
+        <textarea class="form-control mb-2" id="message" name="message" rows="5" placeholder="Mensagem (max 250 caracteres)" required></textarea>
+
+        <div id="contact-feedback" class="alert" role="alert" style="display:none;"></div>
+
+        <button type="submit" class="btn btn-primary w-100">Enviar</button>
+      </form>
+      <small class="text-muted">Pode também enviar um email diretamente para comercial@ldcbusiness.co.mz</small>
+    </div>
+    <div class="col-lg-6 animate">
+      <h5>Contactos</h5>
+      <p><i class="fa-solid fa-phone"></i> +258 840 388 030 / +258 878 902 766</p>
+      <p><i class="fa-solid fa-envelope"></i> comercial@ldcbusiness.co.mz</p>
+      <p><i class="fa-solid fa-location-dot"></i> Rapale, Nampula - Moçambique</p>
+      <div class="footer-map mt-3">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.032121649291!2d39.293661!3d-15.116880!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1b1f68df8e0a2b9b%3A0xabc123abc123abc1!2sNampula%2C%20Mozambique!5e0!3m2!1sen!2smz!4v1700000000000"
+          width="100%" height="220" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Footer -->
+<footer>
+  <div class="container footer-container">
+    <div class="footer-left">
+      <h5>LDC Business & Consultores</h5>
+      <div class="footer-slogan">Transformação, Inovação e Agroprocessamento</div>
+    </div>
+    <div class="footer-center text-center">
+      <h6 class="mb-2">Redes Sociais</h6>
+      <a href="#" target="_blank" class="text-white me-2"><i class="fab fa-facebook fa-lg"></i></a>
+      <a href="#" target="_blank" class="text-white me-2"><i class="fab fa-instagram fa-lg"></i></a>
+      <a href="#" target="_blank" class="text-white me-2"><i class="fab fa-twitter fa-lg"></i></a>
+      <a href="#" target="_blank" class="text-white me-2"><i class="fab fa-linkedin fa-lg"></i></a>
+    </div>
+    <div class="footer-right">
+      <h6>Localização</h6>
+      <p class="small-muted mb-0"><i class="fas fa-map-marker-alt me-2"></i>Rapale, Nampula — Moçambique</p>
+      <p class="small-muted mb-0"><i class="fas fa-phone me-2"></i>Tel: +258 840 388 030</p>
+      <p class="small-muted mb-0"><i class="fas fa-envelope me-2"></i>Email: comercial@ldcbusiness.co.mz</p>
+    </div>
+  </div>
+  <div class="text-center mt-3"><small>© 2025 LDC Business & Consultores. Todos os direitos reservados.</small></div>
+</footer>
+
+<!-- SCRIPTS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+/* --------------------------
+  1) Scrollspy-like behaviour:
+     - highlights nav link for the section in view
+     - uses IntersectionObserver
+---------------------------*/
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('#mainNav .nav-link');
+
+const obsOptions = { root: null, rootMargin: '-40% 0px -40% 0px', threshold: 0 };
+const observer = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    const id = entry.target.id;
+    const link = document.querySelector(`#mainNav .nav-link[href="#${id}"]`);
+    if(entry.isIntersecting){
+      navLinks.forEach(n=>n.classList.remove('active'));
+      if(link) link.classList.add('active');
+    }
+  });
+}, obsOptions);
+sections.forEach(s=>observer.observe(s));
+
+/* --------------------------
+  2) Reveal on scroll animations
+---------------------------*/
+const animEls = document.querySelectorAll('.animate');
+const animObs = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('show');
+      animObs.unobserve(e.target);
+    }
+  });
+},{threshold:.12});
+animEls.forEach(el=>animObs.observe(el));
+
+/* --------------------------
+  3) Language switcher (uses translations object below)
+     - preserves your existing data-i18n approach
+---------------------------*/
+const translations = {
+  pt:{
+    home:"Home", sobre:"Sobre", areas:"Áreas", servicos:"Serviços", produtos:"Produtos", parceiros:"Parceiros", equipe:"Equipe", contato:"Contato",
+    heroTitle:"Transformando Frutas em Oportunidade",
+    heroText:"Soluções agroindustriais sustentáveis que fortalecem agricultores, agregam valor e impulsionam o desenvolvimento rural.",
+    heroButton:"Conheça a LDC",
+    sobreTitle:"Sobre a LDC",
+    sobreText1:document.querySelector('[data-i18n="sobreText1"]') ? document.querySelector('[data-i18n="sobreText1"]').innerHTML : "",
+    sobreText2:document.querySelector('[data-i18n="sobreText2"]') ? document.querySelector('[data-i18n="sobreText2"]').innerHTML : "",
+    servicosTitle:"Nossos Serviços",
+    produtosTitle:"Os Nossos Produtos",
+    contatoTitle:"Entre em Contato"
+  },
+  en:{
+    home:"Home", sobre:"About", areas:"Areas", servicos:"Services", produtos:"Products", parceiros:"Partners", equipe:"Team", contato:"Contact",
+    heroTitle:"Transforming Fruits into Opportunity",
+    heroText:"Sustainable agro-industrial solutions that empower farmers, add value and drive rural development.",
+    heroButton:"Meet LDC",
+    sobreTitle:"About LDC",
+    sobreText1:"LDC Business & Consultants is a Mozambican company founded in 2021, based in Nampula, focused on sustainable agro-processing. We transform tropical fruits into juices, pulps, jams, dried fruits and biofertilizers.",
+    sobreText2:"We work with local farmers promoting income, nutrition and social impact with environmental and technological innovation.",
+    servicosTitle:"Our Services",
+    produtosTitle:"Our Products",
+    contatoTitle:"Contact Us"
+  }
+};
+
+function changeLanguage(lang){
+  document.getElementById('htmlLang').lang = lang;
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const key = el.getAttribute('data-i18n');
+    if(translations[lang] && translations[lang][key]){
+      el.innerHTML = translations[lang][key];
+    }
+  });
+  // update idioma button
+  document.querySelectorAll('[data-lang]').forEach(b=>{
+    b.addEventListener('click', (ev)=>{
+      ev.preventDefault();
+      const l = b.getAttribute('data-lang');
+      changeLanguage(l);
+      document.querySelector('.idioma-btn img').src = l === 'pt' ? 'https://flagcdn.com/w20/pt.png' : 'https://flagcdn.com/w20/gb.png';
+      document.querySelector('.idioma-btn span').textContent = l.toUpperCase();
+    });
+  });
+}
+
+document.addEventListener('DOMContentLoaded', ()=>{
+  // init language (saved or default pt)
+  const saved = localStorage.getItem('preferredLanguage') || 'pt';
+  changeLanguage(saved);
+  document.querySelector('.idioma-btn img').src = saved === 'pt' ? 'https://flagcdn.com/w20/pt.png' : 'https://flagcdn.com/w20/gb.png';
+  document.querySelector('.idioma-btn span').textContent = saved.toUpperCase();
+
+  // language dropdown options
+  document.querySelectorAll('[data-lang]').forEach(btn=>{
+    btn.addEventListener('click', (e)=>{
+      e.preventDefault();
+      const lang = btn.getAttribute('data-lang');
+      localStorage.setItem('preferredLanguage', lang);
+      changeLanguage(lang);
+    });
+  });
+});
+
+/* --------------------------
+  4) Contact form send (Formspree)
+     Replace YOUR_FORMSPREE_ENDPOINT with your Formspree endpoint:
+     Example endpoint: https://formspree.io/f/mnqlkzya
+     If not set, it will fallback to mailto.
+---------------------------*/
+const contactForm = document.getElementById('contact-form');
+const feedbackEl = document.getElementById('contact-feedback');
+const FORMSPREE_ENDPOINT = 'YOUR_FORMSPREE_ENDPOINT'; // <-- replace this
+
+contactForm.addEventListener('submit', async (e)=>{
+  e.preventDefault();
+  feedbackEl.style.display = 'none';
+  const name = document.getElementById('name').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const subject = document.getElementById('subject').value.trim();
+  const message = document.getElementById('message').value.trim();
+
+  if(!name || !email || !message){
+    feedbackEl.className = 'alert alert-danger mt-2';
+    feedbackEl.textContent = 'Preencha os campos obrigatórios.';
+    feedbackEl.style.display = 'block';
+    return;
+  }
+
+  // If FORMSPREE_ENDPOINT not configured, fallback to mailto
+  if(!FORMSPREE_ENDPOINT || FORMSPREE_ENDPOINT.includes('YOUR_FORMSPREE_ENDPOINT')){
+    // fallback: open mailto
+    const mailto = `mailto:comercial@ldcbusiness.co.mz?subject=${encodeURIComponent(subject||'Contacto LDC')}&body=${encodeURIComponent('Nome: '+name+'%0AEmail: '+email+'%0A%0A'+message)}`;
+    window.location.href = mailto;
+    return;
+  }
+
+  // Send to Formspree
+  try{
+    const res = await fetch(FORMSPREE_ENDPOINT, {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({name,email,subject,message})
+    });
+    if(res.ok){
+      feedbackEl.className = 'alert alert-success';
+      feedbackEl.textContent = 'Obrigado! Recebemos a sua mensagem. Entraremos em contacto em breve.';
+      feedbackEl.style.display = 'block';
+      contactForm.reset();
+    } else {
+      throw new Error('Erro envio');
+    }
+  }catch(err){
+    console.error(err);
+    feedbackEl.className = 'alert alert-danger';
+    feedbackEl.textContent = 'Ocorreu um erro ao enviar. Por favor tente novamente.';
+    feedbackEl.style.display = 'block';
+  }
+});
+</script>
+</body>
+</html>
